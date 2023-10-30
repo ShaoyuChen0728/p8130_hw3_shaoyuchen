@@ -63,14 +63,14 @@ lower_lwt = x - qt(0.975, df = n-1)*(s/sqrt(n))
 upper_lwt = x + qt(0.975, df = n-1)*(s/sqrt(n))
 ```
 
-95% confidence interval is (125.43, 134.2.
+95% confidence interval is (125.43, 134.2).
 
 Problem 1b
 
 Interpret the confidence interval.
 
 We are 95% confident that the true population mean of women’s weight
-lies between (125.43, 134.2.
+lies between (125.43, 134.2).
 
 Problem 1c
 
@@ -235,9 +235,9 @@ conclude about the CDC’s claim from this interval?
 
 It is Interval Estimation: One-Sample Proportion
 
-a 100 (1 − 𝛼) % confidence interval for one population proportion is
+a 100 (1 − a) % confidence interval for one population proportion is
 given by:
-$$(\hat{p}-z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\hat{p}+z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$$
+$$(\hat{p}-z_{1-a/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\hat{p}+z_{1-a/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$$
 
 ``` r
 # calculate number of mother is suffering from hypertension
@@ -276,7 +276,7 @@ not include in 99% confidence interval.
 
 Problem 3b
 
-Conduct a one-sided hypothesis test at the 𝛼 = 0.1 level. In this test,
+Conduct a one-sided hypothesis test at the a = 0.1 level. In this test,
 we want to see if the true proportion is indeed less than the claimed
 20%. What can we conclude about the CDC’s claim?
 
@@ -320,7 +320,7 @@ pregnant American women suffer from hypertension is correct.
 
 Is there a difference between uterine irritability in the group of
 pregnant women who smoke vs the group of pregnant women that don’t
-smoke? (Use columns ui and smoke.) Conduct a hypothesis test at the 𝛼 =
+smoke? (Use columns ui and smoke.) Conduct a hypothesis test at the a =
 0.01 level. What can we conclude about the proportions of women with
 uterine irritability between the smoking groups?
 
@@ -451,9 +451,9 @@ $$F = {\frac{BetweenSS/(k-1)}{WithinSS/(n-k)}}\sim F_{k-1,n-k}$$
 
 distribution under $H_0$
 
-Rejection rules: Reject $H_0$: if F \> $F_{k-1,n-k,1-\alpha}$
+Rejection rules: Reject $H_0$: if F \> $F_{k-1,n-k,1-a}$
 
-Fail to reject $H_0$: if F $\leqslant F_{k-1,n-k,1-\alpha}$
+Fail to reject $H_0$: if F $\leqslant F_{k-1,n-k,1-a}$
 
 Problem 5d
 

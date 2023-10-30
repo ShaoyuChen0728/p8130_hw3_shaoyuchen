@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.29)  29 OCT 2023 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.29)  29 OCT 2023 23:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,7 +436,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 171.
 [1
 
-{/Users/chenshaoyu/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+{/Users/chenshaoyu/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] [2{/Users/chenshaoyu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
 ! LaTeX Error: Unicode character α (U+03B1)
                not set up for use with LaTeX.
@@ -445,15 +445,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.236 With significance level α
+l.296 With significance level α
                                  pre-specified, compute the test statistic: 
 Here is how much of TeX's memory you used:
- 11172 strings out of 476358
- 171257 string characters out of 5798607
+ 11177 strings out of 476358
+ 171307 string characters out of 5798607
  1938033 words of memory out of 5000000
- 32830 multiletter control sequences out of 15000+600000
- 592764 words of font info for 73 fonts, out of 8000000 for 9000
+ 32831 multiletter control sequences out of 15000+600000
+ 593083 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,79p,331b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,331b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -2,7 +2,7 @@
 title: "sc5351_hw3"
 author: "Shaoyu Chen"
 date: "2023-10-29"
-output: github_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -38,13 +38,13 @@ s = sd(pull(df, lwt))
 lower_lwt = x - qt(0.975, df = n-1)*(s/sqrt(n))
 upper_lwt = x + qt(0.975, df = n-1)*(s/sqrt(n))
 ```
-95% confidence interval is (`r round(lower_lwt, 2)`, `r round(upper_lwt, 2)`.
+95% confidence interval is (`r round(lower_lwt, 2)`, `r round(upper_lwt, 2)`).
 
 Problem 1b
 
 Interpret the confidence interval.
  
-We are 95% confident that the true population mean of women's weight lies between (`r round(lower_lwt, 2)`, `r round(upper_lwt, 2)`.
+We are 95% confident that the true population mean of women's weight lies between (`r round(lower_lwt, 2)`, `r round(upper_lwt, 2)`).
 
 Problem 1c
 
@@ -75,7 +75,7 @@ Sample 2: $s_2, ~ n_2, ~ \bar{x}_2$
 
 Testing the hypotheses: $$  H_0 : \sigma_1^2 = \sigma_2^2 \quad vs \quad H_1 : \sigma_1^2 \ne \sigma_2^2$$
 
-With significance level α pre-specified, compute the test statistic:
+With significance level a pre-specified, compute the test statistic:
 $$ F = {\frac{s_1^2}{s_2^2}} \sim F_{n_1-1, n_2-1},under H_0$$
 
 ```{r}
@@ -192,7 +192,7 @@ about the CDC’s claim from this interval?
 
 It is Interval Estimation: One-Sample Proportion
 
-a 100 (1 − 𝛼) % confidence interval for one population proportion is given by: $$(\hat{p}-z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\hat{p}+z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$$
+a 100 (1 − a) % confidence interval for one population proportion is given by: $$(\hat{p}-z_{1-a/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\hat{p}+z_{1-a/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$$
 
 ```{r}
 # calculate number of mother is suffering from hypertension
@@ -228,7 +228,7 @@ We are 99% confident that the population proportion of pregnant American women s
 
 Problem 3b
 
-Conduct a one-sided hypothesis test at the 𝛼 = 0.1 level. In this test, we want to see if
+Conduct a one-sided hypothesis test at the a = 0.1 level. In this test, we want to see if
 the true proportion is indeed less than the claimed 20%. What can we conclude about the CDC’s claim?
 
 I will use One-Sample Test for Binomial Proportion,tests for One-Population Proportion, Normal Theory Methods
@@ -259,7 +259,7 @@ Based on this result, |Z_test| = 4.691685 > Z_crit = 1.644854, so it reject the 
 ##Problem 4
 
 Is there a difference between uterine irritability in the group of pregnant women who smoke vs the group of pregnant women that don’t smoke? (Use columns ui and smoke.)
-Conduct a hypothesis test at the 𝛼 = 0.01 level. What can we conclude about the proportions
+Conduct a hypothesis test at the a = 0.01 level. What can we conclude about the proportions
 of women with uterine irritability between the smoking groups?
 
 First I will use Tests for Two-Population Proportions, Normal Theory Methods:
@@ -364,9 +364,9 @@ $$F = {\frac{BetweenSS/(k-1)}{WithinSS/(n-k)}}\sim F_{k-1,n-k}$$
 
 distribution under $H_0$
 
-Rejection rules: Reject $H_0$: if F > $F_{k-1,n-k,1-\alpha}$
+Rejection rules: Reject $H_0$: if F > $F_{k-1,n-k,1-a}$
 
-Fail to reject $H_0$: if F $\leqslant F_{k-1,n-k,1-\alpha}$
+Fail to reject $H_0$: if F $\leqslant F_{k-1,n-k,1-a}$
 
 
 
