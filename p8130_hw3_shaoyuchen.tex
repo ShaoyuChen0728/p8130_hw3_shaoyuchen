@@ -1,0 +1,669 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={sc5351\_hw3},
+  pdfauthor={Shaoyu Chen},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{sc5351\_hw3}
+\author{Shaoyu Chen}
+\date{2023-10-29}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.3     v readr     2.1.4
+## v forcats   1.0.0     v stringr   1.5.0
+## v ggplot2   3.4.3     v tibble    3.2.1
+## v lubridate 1.9.2     v tidyr     1.3.0
+## v purrr     1.0.2     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(MASS)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'MASS'
+## 
+## The following object is masked from 'package:dplyr':
+## 
+##     select
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{=}\NormalTok{ birthwt}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#Problem 1
+
+Some medical professionals claim that the average weight of American
+women is 171 pounds. The column lwt holds the mother's weight (in
+pounds) at last menstrual period, i.e.~her pre-pregnancy weight. Use
+this column for the following questions.
+
+Problem 1a
+
+Construct a 95\% confidence interval of true mean weight of American
+women.
+
+n = 189
+
+\(\bar{X}\) (sample mean) = 129.8148148
+
+\(s\) (sample standard deviation) = 30.5793804
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{=} \FunctionTok{length}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, lwt))}
+\NormalTok{x }\OtherTok{=} \FunctionTok{mean}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, lwt))}
+\NormalTok{s }\OtherTok{=} \FunctionTok{sd}\NormalTok{(}\FunctionTok{pull}\NormalTok{(df, lwt))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lower\_lwt }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{{-}} \FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =}\NormalTok{ n}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{*}\NormalTok{(s}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(n))}
+\NormalTok{upper\_lwt }\OtherTok{=}\NormalTok{ x }\SpecialCharTok{+} \FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =}\NormalTok{ n}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{*}\NormalTok{(s}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(n))}
+\end{Highlighting}
+\end{Shaded}
+
+95\% confidence interval is (125.43, 134.2.
+
+Problem 1b
+
+Interpret the confidence interval.
+
+We are 95\% confident that the true population mean of women's weight
+lies between (125.43, 134.2.
+
+Problem 1c
+
+Comment on the validity of the statement above (``Some medical
+professionals claim that the average weight of American women is 171
+pounds''). In other words, what can we say about this statement given
+our confidence interval from part a?
+
+This statement is not valid, because the average weight of American
+women is 171 pounds is not included in the 95\% confidence interval.
+
+\#\#Problem 2
+
+In this data set, we have a variable (smoke) indicating the smoking
+status of the mothers during pregnancy. Some doctors believe that
+smoking status is related to weight. Using the columns smoke and lwt,
+test this claim. (Note: a value of 1 indicates the mother is in the
+``smoking'' group.)
+
+Problem 2a
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Test for the equality of variances between the two groups. (Use a 5\%
+  significance level.)
+\end{enumerate}
+
+Test for Equality of Variances
+
+Sample 1: \(s_1, ~ n_1, ~ \bar{x}_1\)
+
+Sample 2: \(s_2, ~ n_2, ~ \bar{x}_2\)
+
+Testing the hypotheses:
+\[  H_0 : \sigma_1^2 = \sigma_2^2 \quad vs \quad H_1 : \sigma_1^2 \ne \sigma_2^2\]
+
+With significance level α pre-specified, compute the test statistic:
+\[ F = {\frac{s_1^2}{s_2^2}} \sim F_{n_1-1, n_2-1},under H_0\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{var\_smoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pull}\NormalTok{(lwt) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{var}\NormalTok{()}
+
+\NormalTok{var\_nonsmoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pull}\NormalTok{(lwt) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{var}\NormalTok{()}
+
+\CommentTok{\# calculate F statistic}
+\NormalTok{F\_test }\OtherTok{=}\NormalTok{ var\_smoke}\SpecialCharTok{/}\NormalTok{var\_nonsmoke}
+
+\NormalTok{n\_smoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{nrow}\NormalTok{()}
+  
+\NormalTok{n\_nonsmoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{nrow}\NormalTok{()}
+
+\CommentTok{\# calculate critical value  }
+\NormalTok{F\_crit }\OtherTok{=} \FunctionTok{qf}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df1 =} \DecValTok{73}\NormalTok{, }\AttributeTok{df2 =} \DecValTok{114}\NormalTok{)}
+
+\CommentTok{\# decision}
+\FunctionTok{ifelse}\NormalTok{(F\_test }\SpecialCharTok{\textgreater{}}\NormalTok{ F\_crit, }\StringTok{"reject"}\NormalTok{, }\StringTok{"fail to reject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "fail to reject"
+\end{verbatim}
+
+So, it fail to reject
+
+Problem 2b
+
+Given your answer from part a, what kind of hypothesis test will you
+perform?
+
+I will perform Two-Sample Independent t-test.
+
+Problem 2c
+
+Conduct your chosen hypothesis test from part b at the 10\% significance
+level. What is your decision regarding the null? Interpret this result
+in the context of the problem.
+
+Assume the hypotheses:
+\[H_0 : \mu_1 = \mu_2 \quad vs \quad H_1 : \mu_1 \ne \mu_2\]
+
+With significance level α pre-specified, compute the test statistic:
+\[t = {\frac{\overline{X_1}-\overline{X_2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}} \sim t_{n_1+n_2-2}\]
+
+Where s is called the pooled sample standard deviation
+
+\[s^2 = \frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate mean X1,X2}
+\NormalTok{mean\_nonsmoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pull}\NormalTok{(lwt) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mean}\NormalTok{()}
+
+\NormalTok{mean\_smoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pull}\NormalTok{(lwt) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mean}\NormalTok{()}
+
+\CommentTok{\# calculate s1,s2}
+\NormalTok{sd\_nonsmoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pull}\NormalTok{(lwt) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{sd}\NormalTok{()}
+
+\NormalTok{sd\_smoke }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{pull}\NormalTok{(lwt) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{sd}\NormalTok{()}
+
+\CommentTok{\# calculate s}
+\NormalTok{s\_pool }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(((n\_nonsmoke}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{*}\NormalTok{sd\_nonsmoke}\SpecialCharTok{\^{}}\DecValTok{2}\SpecialCharTok{+}\NormalTok{(n\_smoke}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{*}\NormalTok{sd\_smoke}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(n\_nonsmoke }\SpecialCharTok{+}\NormalTok{ n\_smoke }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{))}
+
+\CommentTok{\# calculate T statistic}
+\NormalTok{T\_test }\OtherTok{=}\NormalTok{ (mean\_nonsmoke }\SpecialCharTok{{-}}\NormalTok{ mean\_smoke)}\SpecialCharTok{/}\NormalTok{(s\_pool}\SpecialCharTok{*}\FunctionTok{sqrt}\NormalTok{((}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n\_nonsmoke)}\SpecialCharTok{+}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n\_smoke)))}
+\NormalTok{T\_test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6047303
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate critical value  }
+\NormalTok{T\_crit }\OtherTok{=} \FunctionTok{qt}\NormalTok{(}\FloatTok{0.95}\NormalTok{, n\_smoke }\SpecialCharTok{+}\NormalTok{ n\_nonsmoke }\SpecialCharTok{{-}} \DecValTok{2}\NormalTok{)}
+\NormalTok{T\_crit}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.653043
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# decision}
+\FunctionTok{ifelse}\NormalTok{(T\_test }\SpecialCharTok{\textgreater{}}\NormalTok{ T\_crit, }\StringTok{"reject"}\NormalTok{, }\StringTok{"fail to reject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "fail to reject"
+\end{verbatim}
+
+Based on this result, it fail to reject the null hypothesis, since
+T\_test = 0.6047303 \textless{} T\_crit = 1.653043.
+
+\#\#Problem 3
+
+According to the CDC, approximately 20\% of pregnant American women
+suffer from hypertension. Do our data support this claim? (Use column ht
+- a value of 1 means the mother is suffering from hypertension.)
+
+Problem 3a
+
+Conduct a 99\% confidence interval and interpret the results. What can
+we conclude about the CDC's claim from this interval?
+
+It is Interval Estimation: One-Sample Proportion
+
+a 100 (1 − 𝛼) \% confidence interval for one population proportion is
+given by:
+\[(\hat{p}-z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\hat{p}+z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}})\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate number of mother is suffering from hypertension}
+\NormalTok{n\_ht }\OtherTok{=} 
+\NormalTok{  birthwt}\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\NormalTok{ht\_0 }\OtherTok{=} 
+\NormalTok{  birthwt}\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(ht }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\NormalTok{ht\_1 }\OtherTok{=}
+\NormalTok{  birthwt}\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(ht }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\CommentTok{\# calculate the value of proportion}
+\NormalTok{ht\_prop }\OtherTok{=}\NormalTok{ ht\_1}\SpecialCharTok{/}\NormalTok{(ht\_1 }\SpecialCharTok{+}\NormalTok{ ht\_0)}
+
+\CommentTok{\# calculate the N(0,1) with a = 0.01}
+\NormalTok{z\_ht }\OtherTok{=} \FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.995}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# calculate the lower and upper of CI}
+\NormalTok{lower\_ht }\OtherTok{=}\NormalTok{ ht\_prop }\SpecialCharTok{{-}}\NormalTok{ z\_ht }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(ht\_prop}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ ht\_prop)}\SpecialCharTok{/}\NormalTok{n\_ht)}
+\NormalTok{upper\_ht }\OtherTok{=}\NormalTok{ ht\_prop }\SpecialCharTok{+}\NormalTok{ z\_ht }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(ht\_prop}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ ht\_prop)}\SpecialCharTok{/}\NormalTok{n\_ht)}
+\end{Highlighting}
+\end{Shaded}
+
+99\% confidence interval is (0.0178041, 0.10918).
+
+We are 99\% confident that the population proportion of pregnant
+American women suffer from hypertension lies between (0.0178041,
+0.10918). Based on this result, the claim that CDC has approximately
+20\% of pregnant American women suffer from hypertension is not correct,
+because 0.2 does not include in 99\% confidence interval.
+
+Problem 3b
+
+Conduct a one-sided hypothesis test at the 𝛼 = 0.1 level. In this test,
+we want to see if the true proportion is indeed less than the claimed
+20\%. What can we conclude about the CDC's claim?
+
+I will use One-Sample Test for Binomial Proportion,tests for
+One-Population Proportion, Normal Theory Methods
+
+Assume the hypothesis: \[H_0 : p = p_0 \quad vs \quad H_1 : p < p_0\]
+
+With significance level α pre-specified, compute the test statistic:
+\[ z = {\frac{\hat{p} - p_0}{\sqrt{p_0(1 - p_0)/n}}}\sim N(0,1)\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate critical value  }
+\NormalTok{Z\_crit }\OtherTok{=} \FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.95}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{Z\_crit}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.644854
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate Z statistic}
+\NormalTok{Z\_test }\OtherTok{=}\NormalTok{ (ht\_prop}\FloatTok{{-}0.2}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(}\FloatTok{0.2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\FloatTok{{-}0.2}\NormalTok{)}\SpecialCharTok{/}\NormalTok{n\_ht)}
+\NormalTok{Z\_test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -4.691685
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# decision}
+\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{abs}\NormalTok{(Z\_test) }\SpecialCharTok{\textgreater{}}\NormalTok{ Z\_crit, }\StringTok{"reject"}\NormalTok{, }\StringTok{"fail to reject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "reject"
+\end{verbatim}
+
+Based on this result, \textbar Z\_test\textbar{} = 4.691685
+\textgreater{} Z\_crit = 1.644854, so it reject the null hypothesis,
+which means the true proportion is indeed less than the claimed 20\%.
+for CDC's claim, approximately 20\% of pregnant American women suffer
+from hypertension is correct.
+
+\#\#Problem 4
+
+Is there a difference between uterine irritability in the group of
+pregnant women who smoke vs the group of pregnant women that don't
+smoke? (Use columns ui and smoke.) Conduct a hypothesis test at the 𝛼 =
+0.01 level. What can we conclude about the proportions of women with
+uterine irritability between the smoking groups?
+
+First I will use Tests for Two-Population Proportions, Normal Theory
+Methods:
+
+Assume the hypothesis:
+\[H_0 : p_1 = p_2 \quad vs \quad H_1 : p_1 \ne p_2\]
+
+The test statistic is given by:
+\[z = {\frac{\hat{p_1} - \hat{p_2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{n_1}+\frac{1}{n_2})}}}\sim N(0,1)\]
+and where \[\hat{p} = \frac{n_1\hat{p_1}+n_2\hat{p_2}}{n_1+n_2}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate p1, p2 and p}
+\NormalTok{smoke\_ui }\OtherTok{=} 
+\NormalTok{  birthwt}\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{group\_by}\NormalTok{(ui) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(ui }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\NormalTok{nonsmoke\_ui }\OtherTok{=} 
+\NormalTok{  birthwt}\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{group\_by}\NormalTok{(ui) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(ui }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\CommentTok{\# number of nonsmoke = n1, number of smoke = n2}
+\NormalTok{n1 }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\NormalTok{n2 }\OtherTok{=} 
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(smoke }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{nrow}\NormalTok{()}
+
+\CommentTok{\# calculate p1 and p2 }
+\NormalTok{p1 }\OtherTok{=}\NormalTok{ nonsmoke\_ui }\SpecialCharTok{/}\NormalTok{ n1}
+\NormalTok{p2 }\OtherTok{=}\NormalTok{ smoke\_ui }\SpecialCharTok{/}\NormalTok{ n2}
+
+\CommentTok{\# calculate p}
+\NormalTok{p }\OtherTok{=}\NormalTok{ (n1}\SpecialCharTok{*}\NormalTok{p1}\SpecialCharTok{+}\NormalTok{n2}\SpecialCharTok{*}\NormalTok{p2) }\SpecialCharTok{/}\NormalTok{ (n1 }\SpecialCharTok{+}\NormalTok{ n2)}
+
+\CommentTok{\# calculate Z statistic}
+\NormalTok{Z\_test2 }\OtherTok{=}\NormalTok{ (p1 }\SpecialCharTok{{-}}\NormalTok{ p2) }\SpecialCharTok{/} \FunctionTok{sqrt}\NormalTok{(p}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{p)}\SpecialCharTok{*}\NormalTok{((}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n1)}\SpecialCharTok{+}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n2)))}
+\NormalTok{Z\_test2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.8545449
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate critical value }
+\NormalTok{Z\_crit2 }\OtherTok{=} \FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.995}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{Z\_crit2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.575829
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# decision}
+\FunctionTok{ifelse}\NormalTok{(}\FunctionTok{abs}\NormalTok{(Z\_test2) }\SpecialCharTok{\textgreater{}}\NormalTok{ Z\_crit2, }\StringTok{"reject"}\NormalTok{, }\StringTok{"fail to reject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "fail to reject"
+\end{verbatim}
+
+According to this result, At 0.01 significance level, we can't reject
+the null hypothesis, because \textbar Z\_test2\textbar{} = 0.8545449
+\textless{} Z\_crit2 = 2.575829. we can say that there is not a
+significant difference between proportions of women with uterine
+irritability between the smoking groups.
+
+\#\#Problem 5
+
+Is race related to birth weight? (Use columns race and bwt.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{race\_df }\OtherTok{=}
+\NormalTok{  birthwt }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{group\_by}\NormalTok{(race) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{count}\NormalTok{(race)}
+\NormalTok{race\_df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+## # Groups:   race [3]
+##    race     n
+##   <int> <int>
+## 1     1    96
+## 2     2    26
+## 3     3    67
+\end{verbatim}
+
+Problem 5a:
+
+What test would be most appropriate to answer this question?
+
+ANOVA test.
+
+Problem 5b
+
+What assumptions are we making by using this test? Are all assumptions
+met?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  There are k populations of interest (k \textgreater{} 2),
+\item
+  The samples are drawn independently from the underlying populations;
+\item
+  Homoscedasticity: the variances of the k populations are equal;
+\item
+  Normality: the distributions of the error terms are normal (could be
+  relaxed when the sample size is large) They are all met!!! k = 3, the
+  variances of the k populations are equal, the distributions of the
+  error terms are normal, and the samples are drawn independently from
+  the underlying populations.
+\end{enumerate}
+
+Problem 5c
+
+Conduct the test at the 5\% significance level and interpret your
+results. Be sure to write the hypotheses you are testing.
+
+Assume the hypothesis:
+
+\[H_0 : \mu_1 = \mu_2 = \mu_3 \quad vs \quad H_1 : at least two means are not equal\]
+
+Compute the test statistic:
+
+\[F = {\frac{BetweenSS/(k-1)}{WithinSS/(n-k)}}\sim F_{k-1,n-k}\]
+
+distribution under \(H_0\)
+
+Rejection rules: Reject \(H_0\): if F \textgreater{}
+\(F_{k-1,n-k,1-\alpha}\)
+
+Fail to reject \(H_0\): if F \(\leqslant F_{k-1,n-k,1-\alpha}\)
+
+Problem 5d
+
+Perform multiple comparisons - which races are significantly different?
+Interpret your results
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pairwise.t.test}\NormalTok{(birthwt}\SpecialCharTok{$}\NormalTok{bwt,birthwt}\SpecialCharTok{$}\NormalTok{race,}\AttributeTok{p.adj=}\StringTok{"bonferroni"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  birthwt$bwt and birthwt$race 
+## 
+##   1     2    
+## 2 0.049 -    
+## 3 0.029 1.000
+## 
+## P value adjustment method: bonferroni
+\end{verbatim}
+
+Based on this result, race 1 is different.
+
+\end{document}
